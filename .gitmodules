@@ -1,0 +1,3 @@
+[submodule "samples/thirdparty/glew"]
+	path = samples/thirdparty/glew
+	url = ../../nigels-com/glew.git

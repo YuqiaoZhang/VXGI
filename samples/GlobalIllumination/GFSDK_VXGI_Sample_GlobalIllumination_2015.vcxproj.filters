@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Scene.cpp">
+      <Filter>samples\GlobalIllumination</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRenderer.cpp">
+      <Filter>samples\GlobalIllumination</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>samples\GlobalIllumination</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\VXGI\examplecode\GFSDK_NVRHI_OpenGL4.cpp">
+      <Filter>VXGI\examplecode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\VXGI\examplecode\GFSDK_NVRHI_D3D11.cpp">
+      <Filter>VXGI\examplecode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\VXGI\examplecode\GFSDK_NVRHI_D3D12.cpp">
+      <Filter>VXGI\examplecode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\nvidia\utils\Camera.cpp">
+      <Filter>samples\nvidia\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\nvidia\utils\DeviceManager11.cpp">
+      <Filter>samples\nvidia\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\nvidia\utils\DeviceManager12.cpp">
+      <Filter>samples\nvidia\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\nvidia\utils\DeviceManagerGL4.cpp">
+      <Filter>samples\nvidia\utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\VXGI\examplecode\GFSDK_NVRHI_D3D12.h">
+      <Filter>VXGI\examplecode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\VXGI\examplecode\GFSDK_NVRHI_OpenGL4.h">
+      <Filter>VXGI\examplecode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\VXGI\examplecode\GFSDK_NVRHI_D3D11.h">
+      <Filter>VXGI\examplecode</Filter>
+    </ClInclude>
+    <ClInclude Include="BindingHelpers.h">
+      <Filter>samples\GlobalIllumination</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>samples\GlobalIllumination</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneRenderer.h">
+      <Filter>samples\GlobalIllumination</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nvidia\utils\Camera.h">
+      <Filter>samples\nvidia\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nvidia\utils\DeviceManager11.h">
+      <Filter>samples\nvidia\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nvidia\utils\DeviceManager12.h">
+      <Filter>samples\nvidia\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nvidia\utils\DeviceManagerGL4.h">
+      <Filter>samples\nvidia\utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="VXGI">
+      <UniqueIdentifier>{582b73ff-7a39-4025-bd71-b4946df86630}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VXGI\examplecode">
+      <UniqueIdentifier>{bc4f878e-7ffd-4406-bcd7-d82dbcc9840c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples">
+      <UniqueIdentifier>{dd388737-da56-4cc1-ae8b-a7ee59005262}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\nvidia">
+      <UniqueIdentifier>{90cc5b9b-edfe-41e7-aeb6-0ff74e275725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\nvidia\utils">
+      <UniqueIdentifier>{0325aeba-d6a1-436b-9a0c-1e675fb1cb7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\GlobalIllumination">
+      <UniqueIdentifier>{7ffac5d5-efb1-4169-a21c-9c41f36258fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\GlobalIllumination\shaders">
+      <UniqueIdentifier>{5e4fdc89-dbe5-41f9-9a14-c6f50a8109d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\thirdparty">
+      <UniqueIdentifier>{bf05b499-7dd7-4a86-9cc7-c9b120891f75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\thirdparty\x86">
+      <UniqueIdentifier>{06e05375-292f-4801-836d-94c293bbe5c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\thirdparty\x64">
+      <UniqueIdentifier>{5a44c896-a50c-420b-94b1-dd6dfd9bcf7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VXGI\bin">
+      <UniqueIdentifier>{dc53e68f-50dc-4c2a-b12c-44e34464d5e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="shaders.rc">
+      <Filter>samples\GlobalIllumination</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="..\thirdparty\assimp\bin\x64\assimp.dll">
+      <Filter>samples\thirdparty\x64</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\thirdparty\AntTweakBar\bin\AntTweakBar64.dll">
+      <Filter>samples\thirdparty\x64</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\thirdparty\AntTweakBar\bin\AntTweakBar.dll">
+      <Filter>samples\thirdparty\x86</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\thirdparty\assimp\bin\x86\assimp.dll">
+      <Filter>samples\thirdparty\x86</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\thirdparty\FreeImage\x86\FreeImage.dll">
+      <Filter>samples\thirdparty\x86</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\thirdparty\FreeImage\x64\FreeImage.dll">
+      <Filter>samples\thirdparty\x64</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\..\VXGI\bin\GFSDK_VXGI_x64.dll">
+      <Filter>VXGI\bin</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\..\VXGI\bin\GFSDK_VXGI_x86.dll">
+      <Filter>VXGI\bin</Filter>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="shaders\AttributesPS.hlsl">
+      <Filter>samples\GlobalIllumination\shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\BlitPS.hlsl">
+      <Filter>samples\GlobalIllumination\shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\CompositingPS.hlsl">
+      <Filter>samples\GlobalIllumination\shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\FullScreenQuadVS.hlsl">
+      <Filter>samples\GlobalIllumination\shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\DefaultVS.hlsl">
+      <Filter>samples\GlobalIllumination\shaders</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\Shaders.hlsli">
+      <Filter>samples\GlobalIllumination\shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

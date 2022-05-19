@@ -1,0 +1,6 @@
+VoxelizationVS      TEXTFILE "shaders\\GL\\VoxelizationVS.glsl"
+DefaultVS           TEXTFILE "shaders\\GL\\DefaultVS.glsl"
+AttributesPS        TEXTFILE "shaders\\GL\\AttributesPS.glsl"
+FullScreenQuadVS    TEXTFILE "shaders\\GL\\FullScreenQuadVS.glsl"
+BlitPS              TEXTFILE "shaders\\GL\\BlitPS.glsl"
+CompositingPS       TEXTFILE "shaders\\GL\\CompositingPS.glsl"
