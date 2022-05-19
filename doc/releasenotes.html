@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=Edge"/>
+    
+    <title>Release Notes &mdash; NVIDIA VXGI 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/breathe.css" type="text/css" />
+    <link rel="stylesheet" href="_static/application.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styleguide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bootstrap.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/jquery.storageapi.js"></script>
+    <link rel="top" title="NVIDIA VXGI 2.0 documentation" href="index.html" />
+    <link rel="prev" title="NVIDIA VXGI Programming Guide" href="progguide.html" /> 
+  </head>
+  <body>
+<nav class="navbar navbar-inverse navbar-default">
+  <div class="row">
+      <div class="navbar-brand">
+             <img class="logo" src="_static/developerzone_gameworks_logo.png" alt="Logo"/>
+      </div>
+<div id="searchbox" style="display: none; float:right; padding-top:4px; padding-right:4px">
+    <form class="search form-inline" action="search.html" method="get">
+      <div class="form-group">
+      <input type="text" name="q" class="form-control" />
+      <input type="submit" value="Search" class="btn btn-primary" />
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</nav>
+<div class="masthead">
+    <div class="row">
+      <ul class="breadcrumb">
+        <li><a href="index.html">NVIDIA VXGI 2.0 documentation</a></li> 
+      </ul>
+    </div>
+</div>
+<div class="row">
+  <div class="col-md-3 bs-sidenav" style="white-space: nowrap; overflow: auto;">
+<div class="bs-sidebar">
+  <div id="sidebar_toc">
+  <h4>Table Of Contents</h4>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="progguide.html">NVIDIA VXGI Programming Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="progguide.html#what-s-in-the-package">What&#8217;s in the Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="progguide.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="progguide.html#voxelizing-scene-geometry">Voxelizing scene geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="progguide.html#voxelizing-light">Voxelizing light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="progguide.html#ambient-occlusion-vxao-mode">Ambient occlusion (VXAO) mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="progguide.html#area-lighting">Area Lighting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="progguide.html#debugging-voxelization">Debugging voxelization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="progguide.html#custom-g-buffer-support">Custom G-buffer Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vxgi-2-0-1">VXGI 2.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vxgi-2-0-0">VXGI 2.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#new-features">New Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vxal-or-voxel-area-lighting">VXAL, or Voxel Area Lighting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#combined-voxelization">Combined voxelization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#support-for-custom-g-buffer-layouts">Support for custom G-buffer layouts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#view-reprojection">View reprojection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simultaneous-vxgi-and-vxao">Simultaneous VXGI and VXAO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#separate-ssao-pass">Separate SSAO pass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#non-cubic-voxel-volumes">Non-cubic voxel volumes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#support-for-pre-view-translation">Support for pre-view translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stateless-voxelization-view-set-up">Stateless voxelization view set-up</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#other-changes">Other Changes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#improved-performance">Improved performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simpler-and-more-intuitive-tracing-controls">Simpler and more intuitive tracing controls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reduced-light-leaking">Reduced light leaking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finer-control-over-rendering-api-extensions-being-used">Finer control over rendering API extensions being used</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opacity-dimensionality-control-removed">Opacity dimensionality control removed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emittance-format-control-removed">Emittance format control removed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simpler-materialinfo-structure-and-more-flexible-voxelization-shaders">Simpler MaterialInfo structure and more flexible voxelization shaders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tracer-vision-debug-mode-removed">Tracer Vision debug mode removed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emittance-coverage-supersampling-mode-removed">Emittance coverage supersampling mode removed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#improved-nvrhi">Improved NVRHI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opengl-support-removed">OpenGL support removed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#known-issues">Known Issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#indirect-lighting-quality-is-still-not-perfect">Indirect lighting quality is still not perfect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#specular-reflections-are-blurry-floating-and-misshapen">Specular reflections are blurry, floating, and misshapen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#area-light-shadows-have-poor-contact-hardening">Area light shadows have poor contact hardening</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="progguide.html"
+                        title="previous chapter">NVIDIA VXGI Programming Guide</a></p>
+<div id="searchbox" style="display: none">
+  <h4>Quick search</h4>
+    <form class="search form-inline" action="search.html" method="get">
+      <div class="form-group">
+      <input type="text" name="q" class="form-control" />
+      <input type="submit" value="Search" class="btn btn-primary" />
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+  </div>
+    <div class="document col-md-8">
+          <div class="body">
+            
+  <div class="section" id="release-notes">
+<h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="vxgi-2-0-1">
+<h2>VXGI 2.0.1<a class="headerlink" href="#vxgi-2-0-1" title="Permalink to this headline">¶</a></h2>
+<p>No API changes or new features.</p>
+<ul class="simple">
+<li>Fixed: user-defined shader loading errors on GPUs that do not support certain features like FastGS</li>
+<li>Fixed: voxelization flickering on Volta GPUs</li>
+<li>Improved error handling in the sample applications</li>
+</ul>
+</div>
+<div class="section" id="vxgi-2-0-0">
+<h2>VXGI 2.0.0<a class="headerlink" href="#vxgi-2-0-0" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="new-features">
+<h2>New Features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vxal-or-voxel-area-lighting">
+<h3>VXAL, or Voxel Area Lighting<a class="headerlink" href="#vxal-or-voxel-area-lighting" title="Permalink to this headline">¶</a></h3>
+<p>Applications can define rectangular area lights filled with solid color or texture. VXGI will compute diffuse and specular illumination from the area lights, with shadows computed by tracing through the opacity voxels (large scale) and in screen space (small scale). Irradiance from area lights is computed analytically using the Linearly Transformed Cosines method.</p>
+<p>Computing area light illumination was possible with older versions VXGI as well, simply by voxelizing an emissive plane. But the image quality produced by this new solution is far beyond that of voxelized area lights. It still has some issues though, dictated mostly by the low resolution of voxels used to compute occlusion, and by the reduced screen resolution at which the occlusion is computed.</p>
+</div>
+<div class="section" id="combined-voxelization">
+<h3>Combined voxelization<a class="headerlink" href="#combined-voxelization" title="Permalink to this headline">¶</a></h3>
+<p>VXGI 1.0 had two separate voxelization passes: one for opacity and one for emittance. In VXGI 2.0, these two passes are combined into one, with control over which voxel components are being updated passed to the application. Now applications can choose to do a single voxelization pass and account for all direct lighting at once, or to do an opacity pass and then a set of emittance passes for multiple lights, or anything inbetween.</p>
+</div>
+<div class="section" id="support-for-custom-g-buffer-layouts">
+<h3>Support for custom G-buffer layouts<a class="headerlink" href="#support-for-custom-g-buffer-layouts" title="Permalink to this headline">¶</a></h3>
+<p>Instead of requiring the application to provide a depth channel and a normal channel with roughness in the alpha component, both rendered with planar projection, VXGI 2.0 lets the application to use a set of HLSL functions that return geometry data from the G-buffer. Application provides that code to VXGI, which is used to compile the tracing shaders. At render time, the application provides the resources necessary for the custom code to work, such as texture and constant buffer bindings.</p>
+<p>This feature allows applications to use VXGI directly with non-planar projections, such as Multi-Res Shading or Lens-Matched Shading, and with custom channel layouts and data representations. It also makes it possible to vary some tracging settings per pixel, for example to adjust the tracing offset on certain objects to avoid self-occlusion banding. For simple use cases where this kind of flexibility is not necessary, a &#8220;basic&#8221; mode is provided that resembles the VXGI 1.0 tracing interface.</p>
+</div>
+<div class="section" id="view-reprojection">
+<h3>View reprojection<a class="headerlink" href="#view-reprojection" title="Permalink to this headline">¶</a></h3>
+<p>In addition to reprojecting tracing results from the previous frame, VXGI 2.0 can reuse diffuse and specular tracing results from one view in a different view within the same frame. This feature improves tracing performance for VR use cases, although using reprojection for specular lighting means that the reflections have to be computed from the &#8220;center eye&#8221; point of view to avoid discontinuities. Also, view reprojection is currently not supported for VXAL.</p>
+</div>
+<div class="section" id="simultaneous-vxgi-and-vxao">
+<h3>Simultaneous VXGI and VXAO<a class="headerlink" href="#simultaneous-vxgi-and-vxao" title="Permalink to this headline">¶</a></h3>
+<p>Previously, VXGI was able to compute either a diffuse global illumination channel, or an ambient occlusion channel, but not both. VXGI 2.0 outputs ambient occlusion as a component of the diffuse global illumination channel, with no extra performance cost.</p>
+</div>
+<div class="section" id="separate-ssao-pass">
+<h3>Separate SSAO pass<a class="headerlink" href="#separate-ssao-pass" title="Permalink to this headline">¶</a></h3>
+<p>In VXGI 1.0, there was an option to apply screen-space ambient occlusion on top of the diffuse tracing results. VXGI 2.0 makes the SSAO pass available separately, with its own result channel.</p>
+</div>
+<div class="section" id="non-cubic-voxel-volumes">
+<h3>Non-cubic voxel volumes<a class="headerlink" href="#non-cubic-voxel-volumes" title="Permalink to this headline">¶</a></h3>
+<p>VXGI 2.0 removes the restriction that the voxel volume (the clipmap) has to have equal length, width, and height. Now these three dimensions can be controlled independently, for example to better fit the voxel volume to a long or flat room. The dimensions still have to be powers of 2 though.</p>
+</div>
+<div class="section" id="support-for-pre-view-translation">
+<h3>Support for pre-view translation<a class="headerlink" href="#support-for-pre-view-translation" title="Permalink to this headline">¶</a></h3>
+<p>Many engines separate the translation component from the view matrix to improve accuracy when the translation is large. VXGI 2.0 adds support for separate translation component in all passes that deal with projections.</p>
+</div>
+<div class="section" id="stateless-voxelization-view-set-up">
+<h3>Stateless voxelization view set-up<a class="headerlink" href="#stateless-voxelization-view-set-up" title="Permalink to this headline">¶</a></h3>
+<p>VXGI 2.0 adds a pure function that computes the view and projection matrices that have to be used for voxelization, taking all the necessary parameters, such as voxel volume size, as input. This is useful in engines that do view set-up and culling in one thread and rendering in another thread.</p>
+</div>
+</div>
+<div class="section" id="other-changes">
+<h2>Other Changes<a class="headerlink" href="#other-changes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="improved-performance">
+<h3>Improved performance<a class="headerlink" href="#improved-performance" title="Permalink to this headline">¶</a></h3>
+<p>Voxelization performance has been significantly improved, with a major part of the improvement coming from combined opacity and emittance voxelization. Specific speedups heavily depend on scene geometry. Some other passes have better performance as well.</p>
+</div>
+<div class="section" id="simpler-and-more-intuitive-tracing-controls">
+<h3>Simpler and more intuitive tracing controls<a class="headerlink" href="#simpler-and-more-intuitive-tracing-controls" title="Permalink to this headline">¶</a></h3>
+<p>Instead of offering paramters like number of diffuse cones, cone angle, or normal grouping factor, VXGI 2.0 exposes a smaller number of simpler knobs, such as overall quality, sampling rate, or softness.</p>
+</div>
+<div class="section" id="reduced-light-leaking">
+<h3>Reduced light leaking<a class="headerlink" href="#reduced-light-leaking" title="Permalink to this headline">¶</a></h3>
+<p>There was a questionable solution in the cone tracing code of VXGI 1.0 that aimed to reduce banding by integrating irradiance using accumulated opacity from two samples behind. Effectively, it reduced banding contrast by adding a low-frequency bias from light leaking. VXGI 2.0 adds a control over this code, giving applications a choice: more correct but darker solution, or more light leaking and results looking similar to VXGI 1.0.</p>
+</div>
+<div class="section" id="finer-control-over-rendering-api-extensions-being-used">
+<h3>Finer control over rendering API extensions being used<a class="headerlink" href="#finer-control-over-rendering-api-extensions-being-used" title="Permalink to this headline">¶</a></h3>
+<p>VXGI relies on a number of Direct3D extensions available through the NVAPI library, and automatically detects their availability. However, since VXGI issues rendering commands through an NVRHI abstraction layer, and that layer is implemented on the application side, some of the extensions may not be implemented in a given integration. This feature gives applications the ability to enable or disable the use of specific extensions without disabling them all and killing overall performance.</p>
+</div>
+<div class="section" id="opacity-dimensionality-control-removed">
+<h3>Opacity dimensionality control removed<a class="headerlink" href="#opacity-dimensionality-control-removed" title="Permalink to this headline">¶</a></h3>
+<p>VXGI 2.0 uses a simpler representation of opacity: a single value instead of three or six projections. Besides obvious effects on performance (dealing with a single value is easier), it gives applications the ability to smoothly adjust the opacity of certain objects. For example, a plant can have many leaves, which would create a strong shadow - reducing the opacity of those leaves would fix this issue.</p>
+</div>
+<div class="section" id="emittance-format-control-removed">
+<h3>Emittance format control removed<a class="headerlink" href="#emittance-format-control-removed" title="Permalink to this headline">¶</a></h3>
+<p>VXGI 1.0 supported three representations of emittance: UNORM8, FLOAT16 and FLOAT32, besides the NONE option for ambient occlusion mode, and two auto-select options. The UNORM8 option was removed because it came with too many issues, such as unstable directionality, limited dynamic range, and quantization. The FLOAT32 option was removed because it&#8217;s too slow. FLOAT16 is the only option left, and if the GPU doesn&#8217;t support half-precision atomics, a separate intermediate texture is used for voxelization. So VXGI 2.0 only has a switch that says whether emittance should be processed at all, or the application needs just the occlusion for VXAO or VXAL.</p>
+</div>
+<div class="section" id="simpler-materialinfo-structure-and-more-flexible-voxelization-shaders">
+<h3>Simpler MaterialInfo structure and more flexible voxelization shaders<a class="headerlink" href="#simpler-materialinfo-structure-and-more-flexible-voxelization-shaders" title="Permalink to this headline">¶</a></h3>
+<p>With the new voxelization rules, some of the old members of MaterialInfo made no sense. Opacity thickness and noise controls were replaced by scalar opacity passed to the VXGI part of the voxelization pixel shader. TwoSided and FrontCounterClockwise parameters replaced by the normal, front, and back colors passed to the same part of the shader. ProportionalEmittance is always on, and OmnidirectionalLight is always off. Consequently, any change in the MaterialInfo structure now requires a new voxelization state to be obtained from VXGI, but the getVoxelizationState function is now much more lightweight on the CPU side.</p>
+</div>
+<div class="section" id="tracer-vision-debug-mode-removed">
+<h3>Tracer Vision debug mode removed<a class="headerlink" href="#tracer-vision-debug-mode-removed" title="Permalink to this headline">¶</a></h3>
+<p>This debug mode was primarily intended for VXGI development and is of little use to real applications. If necessary, it can be implemented on the application side using the custom tracing shader feature.</p>
+</div>
+<div class="section" id="emittance-coverage-supersampling-mode-removed">
+<h3>Emittance coverage supersampling mode removed<a class="headerlink" href="#emittance-coverage-supersampling-mode-removed" title="Permalink to this headline">¶</a></h3>
+<p>In VXGI 1.0, there was an option to use conservative rasterization when voxelizing emittance, and then sample the visibility in the pixel shader using edge equations. This option was only useful on very small and bright objects to reduce flicker at a high performance cost, and these objects are better represented by regular lights.</p>
+</div>
+<div class="section" id="improved-nvrhi">
+<h3>Improved NVRHI<a class="headerlink" href="#improved-nvrhi" title="Permalink to this headline">¶</a></h3>
+<p>The D3D11 and D3D12 implementations of NVRHI that come with VXGI have been improved with new features and performance. One notable improvement is a significant reduction in D3D11 API calls related to state clearing between draw or dispatch calls. Still, the current version of NVRHI does not map well to modern APIs like D3D12, and a better one is being developed, likely to be used in a future version of VXGI.</p>
+</div>
+<div class="section" id="opengl-support-removed">
+<h3>OpenGL support removed<a class="headerlink" href="#opengl-support-removed" title="Permalink to this headline">¶</a></h3>
+<p>There were no known integrations of VXGI 1.0 using OpenGL. It&#8217;s likely that a future version of VXGI will support Vulkan instead.</p>
+</div>
+</div>
+<div class="section" id="known-issues">
+<h2>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="indirect-lighting-quality-is-still-not-perfect">
+<h3>Indirect lighting quality is still not perfect<a class="headerlink" href="#indirect-lighting-quality-is-still-not-perfect" title="Permalink to this headline">¶</a></h3>
+<p>There are still some flickering, banding, light leaking, self-occlusion and self-illumination artifacts. Apparently, they&#8217;re fundamentally hard to avoid using a voxel based approach. With some tuning of content and settings, most of them can be avoided or mitigated.</p>
+</div>
+<div class="section" id="specular-reflections-are-blurry-floating-and-misshapen">
+<h3>Specular reflections are blurry, floating, and misshapen<a class="headerlink" href="#specular-reflections-are-blurry-floating-and-misshapen" title="Permalink to this headline">¶</a></h3>
+<p>Blurriness is caused by the minimal resolution of voxels: there is not enough voxel data to compute perfect mirror reflections. Floating is caused by the initial offset taken before tracing the specular cone, which is necessary to avoid self-occlusion and self-illumination. The incorrect shape (e.g. lack of vertical elongation of reflections on the floor) is caused by the fact that only one specular cone is being traced: it&#8217;s possible to better match the BRDF by tracing multiple cones, but that would be much more expensive. As a consequence, VXGI specular should only be used for rough, curved surfaces, such as tiles on the floor.</p>
+</div>
+<div class="section" id="area-light-shadows-have-poor-contact-hardening">
+<h3>Area light shadows have poor contact hardening<a class="headerlink" href="#area-light-shadows-have-poor-contact-hardening" title="Permalink to this headline">¶</a></h3>
+<p>When screen space occlusion is not used, the shadows can start a couple of voxels away from the objects that cast them. This is caused by initial offset taken before tracing the occlusion cone, which is necessary to avoid self-occlusion of the illuminated geometry. Screen space occlusion fixes that issue in most cases, but it breaks under certain viewing angles due to surface orientation or occlusion. Even with screen space occlusion, there is still some blur at shadow contact points because the shadows are normally computed at a reduced resolution and then upscaled.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+<div class="masthead">
+    <div class="row">
+      <ul class="breadcrumb">
+        <li><a href="index.html">NVIDIA VXGI 2.0 documentation</a></li> 
+      </ul>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-boilerplate">
+        <div class="row">
+            <div class="boilerplate">
+                Copyright &copy; 2014, NVIDIA Corporation &nbsp; | &nbsp; <a href="http://www.nvidia.com/object/about-nvidia.html" onclick="s_objectID=&quot;http://www.nvidia.com/object/about-nvidia.html_1&quot;;return this.s_oc?this.s_oc(e):true">About NVIDIA </a>&nbsp; | &nbsp; <a href="http://www.nvidia.com/object/legal_info.html" onclick="s_objectID=&quot;http://www.nvidia.com/object/legal_info.html_1&quot;;return this.s_oc?this.s_oc(e):true">Legal Information </a>&nbsp; | &nbsp; <a href="http://www.nvidia.com/object/privacy_policy.html" onclick="s_objectID=&quot;http://www.nvidia.com/object/privacy_policy.html_1&quot;;return this.s_oc?this.s_oc(e):true">Privacy Policy </a>
+            </div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      processEscapes: true,
+      skipTags: ["script","noscript","style","textarea"]
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] },
+    TeX: {
+        Macros: {
+          Lrg: ['\\displaystyle{#1}', 1, ""]
+        }
+      }
+  });
+</script>
+
+
+<script type="text/javascript" async
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script>
+var treestatename = 'GWDocsTreeState';
+var protocol = location.href.split('/')[0].toLowerCase();
+var storage;
+if (protocol.substring(0,4) == 'http') {
+  storage = $.cookieStorage;
+  storage.setPath('/');
+} else {
+  storage = $.localStorage;
+}
+
+if (storage.isEmpty(treestatename)) {
+  storage.set(treestatename, {});
+}
+
+var treestate = storage.get(treestatename);
+
+$.each($("#sidebar_toc ul li"), toc_walker);
+
+function toc_walker(key, value) {
+    var handleSpan = $("<span></span>")
+        .addClass("toc_handle").prependTo(value);
+    handleSpan.attr("id", $(value).closest("div").attr("id") + "." + key);
+
+    if($(value).has("ul li").size() > 0) {
+        var id = handleSpan.attr("id");
+        if (!(id in treestate)) {
+          treestate[id] = false;
+        }
+        handleSpan.addClass("toc_expanded").click(function() {
+            $(this).toggleClass("toc_expanded toc_collapsed").siblings("ul").toggle();
+            treestate[$(this).attr('id')] = $(this).hasClass('toc_expanded');
+            storage.set(treestatename, treestate);
+        });
+        if(!($(this).hasClass('current') || treestate[id])) {
+            handleSpan.click();
+        }
+        if($(this).hasClass('current')) {
+            treestate[handleSpan.attr('id')] = handleSpan.hasClass('toc_expanded');
+            storage.set(treestatename, treestate);
+        }
+    }
+}
+</script>
+  </body>
+</html>

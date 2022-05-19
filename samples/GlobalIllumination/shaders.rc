@@ -1,0 +1,2 @@
+VoxelizationPS        TEXTFILE "shaders\\VoxelizationPS.hlsl"
+TransparentGeometryPS TEXTFILE "shaders\\TransparentGeometryPS.hlsl"

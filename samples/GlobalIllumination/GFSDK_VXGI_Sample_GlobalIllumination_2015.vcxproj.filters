@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>sample</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>sample</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRenderer.cpp">
+      <Filter>sample</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utils\Camera.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utils\DeviceManager11.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\VXGI\examplecode\GFSDK_NVRHI_D3D11.cpp">
+      <Filter>VXGI\examplecode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utils\DeviceManager12.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\VXGI\examplecode\GFSDK_NVRHI_D3D12.cpp">
+      <Filter>VXGI\examplecode</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scene.h">
+      <Filter>sample</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneRenderer.h">
+      <Filter>sample</Filter>
+    </ClInclude>
+    <ClInclude Include="BindingHelpers.h">
+      <Filter>sample</Filter>
+    </ClInclude>
+    <ClInclude Include="..\utils\Camera.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\utils\DeviceManager11.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\VXGI\examplecode\GFSDK_NVRHI_D3D11.h">
+      <Filter>VXGI\examplecode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\utils\DeviceManager12.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\VXGI\examplecode\GFSDK_NVRHI_D3D12.h">
+      <Filter>VXGI\examplecode</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="sample">
+      <UniqueIdentifier>{083202c2-2d7d-443c-b01c-e00bdda7b4ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{7ffac5d5-efb1-4169-a21c-9c41f36258fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VXGI">
+      <UniqueIdentifier>{582b73ff-7a39-4025-bd71-b4946df86630}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VXGI\bin">
+      <UniqueIdentifier>{80ff41ff-7e63-486e-a717-41e2e0dc8d52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VXGI\examplecode">
+      <UniqueIdentifier>{6982ae48-5d3d-45c0-a3ec-0bd9f4d1042e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thirdparty">
+      <UniqueIdentifier>{c15a517c-c0c9-4268-8372-cd5ca3820647}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thirdparty\x64">
+      <UniqueIdentifier>{dab62796-c1dd-43d2-9189-3e83c767beff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thirdparty\x86">
+      <UniqueIdentifier>{875e09c8-e302-4fd9-8226-748c0101390c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sample\shaders">
+      <UniqueIdentifier>{0eb4f0a8-176d-4171-8cc1-5393098e0e70}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="shaders.rc">
+      <Filter>sample</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="shaders\TransparentGeometryPS.hlsl">
+      <Filter>sample</Filter>
+    </CustomBuild>
+    <CustomBuild Include="shaders\VoxelizationPS.hlsl">
+      <Filter>sample</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="..\..\VXGI\bin\GFSDK_VXGI_x86.dll">
+      <Filter>VXGI\bin</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\..\VXGI\bin\GFSDK_VXGI_x64.dll">
+      <Filter>VXGI\bin</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\thirdparty\FreeImage\x64\FreeImage.dll">
+      <Filter>thirdparty\x64</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\thirdparty\assimp\lib\x64\assimp.dll">
+      <Filter>thirdparty\x64</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\thirdparty\AntTweakBar\lib\AntTweakBar64.dll">
+      <Filter>thirdparty\x64</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\thirdparty\FreeImage\x86\FreeImage.dll">
+      <Filter>thirdparty\x86</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\thirdparty\assimp\lib\x86\assimp.dll">
+      <Filter>thirdparty\x86</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\thirdparty\AntTweakBar\lib\AntTweakBar.dll">
+      <Filter>thirdparty\x86</Filter>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="shaders\AttributesPS.hlsl">
+      <Filter>sample\shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\BlitLdrPS.hlsl">
+      <Filter>sample\shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\BlitPS.hlsl">
+      <Filter>sample\shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\CompositingPS.hlsl">
+      <Filter>sample\shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\DefaultVS.hlsl">
+      <Filter>sample\shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\FullScreenQuadVS.hlsl">
+      <Filter>sample\shaders</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\Shaders.hlsli">
+      <Filter>sample\shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>
