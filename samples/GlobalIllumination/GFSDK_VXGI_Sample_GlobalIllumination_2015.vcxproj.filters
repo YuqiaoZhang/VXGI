@@ -98,6 +98,9 @@
     <Filter Include="VXGI\bin">
       <UniqueIdentifier>{dc53e68f-50dc-4c2a-b12c-44e34464d5e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="samples\GlobalIllumination\recon">
+      <UniqueIdentifier>{4e824ceb-9b7d-4def-bd5b-faf3bb99e7cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="shaders.rc">
@@ -145,6 +148,30 @@
     </FxCompile>
     <FxCompile Include="shaders\DefaultVS.hlsl">
       <Filter>samples\GlobalIllumination\shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="recon\VoxelizationGS-1.hlsl">
+      <Filter>samples\GlobalIllumination\recon</Filter>
+    </FxCompile>
+    <FxCompile Include="recon\VoxelizationGS-2.hlsl">
+      <Filter>samples\GlobalIllumination\recon</Filter>
+    </FxCompile>
+    <FxCompile Include="recon\VoxelizationGS-3.hlsl">
+      <Filter>samples\GlobalIllumination\recon</Filter>
+    </FxCompile>
+    <FxCompile Include="recon\VoxelizationGS-4.hlsl">
+      <Filter>samples\GlobalIllumination\recon</Filter>
+    </FxCompile>
+    <FxCompile Include="recon\VoxelizationGS-5.hlsl">
+      <Filter>samples\GlobalIllumination\recon</Filter>
+    </FxCompile>
+    <FxCompile Include="recon\VoxelizationPS-1.hlsl">
+      <Filter>samples\GlobalIllumination\recon</Filter>
+    </FxCompile>
+    <FxCompile Include="recon\VoxelizationPS-2.hlsl">
+      <Filter>samples\GlobalIllumination\recon</Filter>
+    </FxCompile>
+    <FxCompile Include="recon\VoxelizationPS-3.hlsl">
+      <Filter>samples\GlobalIllumination\recon</Filter>
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
